@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Author: Sijan
 # @Date:   2018-03-14 15:55:52
-# @Last Modified time: 2018-03-16 10:11:56
+# @Last Modified time: 2018-03-16 14:06:53
 
 
 from distutils.core import setup
+
+from codecs import open
 
 import sys
 
@@ -39,7 +41,7 @@ setup(
     author='Sijan Bhandari',
     author_email='sijanonly@gmail.com',
     description='A python implementation of solutions by text REST API',
-    long_description=open('README.txt').read(),
+    long_description=open('README.rst').read(),
     install_requires=[
         "requests",
     ],
