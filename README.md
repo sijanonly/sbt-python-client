@@ -6,7 +6,7 @@
 
 ### Installation
 
-        pip install SolutionsByText
+        pip install sbt-python-client
 
 ### Usage
 
