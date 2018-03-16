@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Sijan
 # @Date:   2018-03-14 15:55:52
-# @Last Modified time: 2018-03-16 10:00:39
+# @Last Modified time: 2018-03-16 10:11:56
 
 
 from distutils.core import setup
@@ -32,7 +32,7 @@ class PyTest(TestCommand):
 
 setup(
     name='sbt-python-client',
-    version='1.0.1',
+    version='1.0.2',
     packages=['solutions_by_text', 'solutions_by_text.test'],
     url='http://pypi.python.org/pypi/SolutionsByText',
     license='MIT',

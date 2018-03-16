@@ -1,5 +1,5 @@
 =====================================================================
-SolutionsByText: Wrapper for consuming `solutions by text REST API <https://www.solutionsbytext.com/api-support/api-documentation/>`_.
+sbt-python-client: Wrapper for consuming `solutions by text REST API <https://www.solutionsbytext.com/api-support/api-documentation/>`_.
 =====================================================================
 
 SolutionsByText implements solutionsbytext REST API for python. Typical usage

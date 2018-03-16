@@ -1,6 +1,6 @@
 
 
-## SolutionsByText: Wrapper for consuming [`solutions by text REST API`](https://www.solutionsbytext.com/api-support/api-documentation/)
+## sbt-python-client : Wrapper for consuming [`solutions by text REST API`](https://www.solutionsbytext.com/api-support/api-documentation/)
 
 
 
