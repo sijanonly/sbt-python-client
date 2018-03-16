@@ -11,3 +11,10 @@ often looks like this::
 
         carrier_object = carrier.CarrierLookUp(api_key='API_KEY', org_code='ORG_CODE', phone='PHONE_NUMBER')
         response = carrier_object.get()
+
+
+        .. code-block:: python
+
+        >>> from solutions_by_text import carrier
+        >>> carrier_object = carrier.CarrierLookUp(api_key='API_KEY', org_code='ORG_CODE', phone='PHONE_NUMBER')
+        >>> response = carrier_object.get()
