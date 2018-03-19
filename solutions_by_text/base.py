@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: sijanonly
 # @Date:   2018-03-15 12:59:25
-# @Last Modified time: 2018-03-15 17:14:29
+# @Last Modified time: 2018-03-19 11:10:26
 
 import json
 
@@ -9,9 +9,7 @@ from urllib import parse
 
 import requests
 
-
-class CustomException(Exception):
-    pass
+from .handle_exceptions import CustomException
 
 
 class SolutionByTextHTTPInterface(object):
@@ -46,33 +44,19 @@ class SolutionByTextAPI(SolutionByTextHTTPInterface):
 
     __base_url = 'https://{}.solutionsbytext.com/SBT.App.SetUp/RSServices/'
 
-    def __init__(self, api_key, org_code, stage='test'):
+    def __init__(self, security_token, org_code, stage='test'):
         if stage not in ['test', 'ui']:
             raise CustomException('Stages must be either "test" or "ui"')
-        self.api_key = api_key
-        self.org_code = org_code
-        self.stage = stage
-        self.__security_token = None
-        self.__set_security_token()
+        # self.api_key = api_key
+        self.__org_code = org_code
+        self.__stage = stage
+        self.__security_token = security_token
 
-    def set_security_token(self):
+    @property
+    def stage(self):
         """
-        Calls loginAPI to set security token
         """
-        url = ''.join(
-            [
-                self.base_url,
-                'LoginAPIService.svc/AuthenticateAPIKey?',
-                parse.urlencode({'APIKey': self.api_key})
-            ]
-        )
-
-        response_data = json.loads(requests.get(url).text)
-        if response_data['AuthenticateAPIKeyResult'].get('ErrorCode') == 1402:
-            raise CustomException(
-                'Error while authentication. Error in generating security key.')
-
-        self.__security_token = response_data['AuthenticateAPIKeyResult'].get('SecurityToken')
+        return self.__stage
 
     @property
     def base_url(self):
@@ -84,10 +68,16 @@ class SolutionByTextAPI(SolutionByTextHTTPInterface):
     @property
     def security_token(self):
         """
-        This method uses the API Key to obtain a Security Token
         """
 
         return self.__security_token
+
+    @property
+    def org_code(self):
+        """
+        """
+
+        return self.__org_code
 
     def get(self, **kwargs):
         """
@@ -103,4 +93,3 @@ class SolutionByTextAPI(SolutionByTextHTTPInterface):
             params=payload
         )
 
-    __set_security_token = set_security_token   # private copy of original set_security_token() method
