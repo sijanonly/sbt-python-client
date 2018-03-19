@@ -2,7 +2,7 @@
 # @Author: sijanonly
 # @Date:   2018-03-16 17:43:21
 # @Last Modified by:   sijanonly
-# @Last Modified time: 2018-03-19 13:25:53
+# @Last Modified time: 2018-03-19 13:57:23
 
 import requests
 import responses
@@ -16,7 +16,7 @@ _base_url = 'https://{}.solutionsbytext.com/SBT.App.SetUp/RSServices/'
 
 
 @responses.activate
-def test_create_security_token():
+def test_create_security_token(valid_token_response):
 
     API_KEY = 'TESTKEY'
     STAGE = 'test'
@@ -30,12 +30,7 @@ def test_create_security_token():
     )
 
     responses.add(responses.GET, url,
-                  json={
-                      "AuthenticateAPIKeyResult":
-                      {"SecurityToken": "test_TOKEN",
-                       "ErrorCode": 1400,
-                       "Result": True,
-                       "Message": "Successfully generated securitytoken"}})
+                  json=valid_token_response)
 
     token = create_security_token(API_KEY, STAGE)
 
