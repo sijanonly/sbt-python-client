@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Sijan
 # @Date:   2018-03-14 15:55:52
-# @Last Modified time: 2018-03-19 14:42:57
+# @Last Modified time: 2018-03-19 14:44:52
 
 
 from distutils.core import setup
@@ -34,7 +34,7 @@ class PyTest(TestCommand):
 
 setup(
     name='sbt-python-client',
-    version='1.0.2',
+    version='1.0.3',
     packages=['solutions_by_text', 'tests'],
     url='https://github.com/sijanonly/sbt-python-client',
     license='MIT',

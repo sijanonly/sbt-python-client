@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: sijanonly
 # @Date:   2018-03-15 12:59:25
-# @Last Modified time: 2018-03-19 11:10:26
+# @Last Modified time: 2018-04-02 11:08:46
 
 import json
 
@@ -34,7 +34,7 @@ class SolutionByTextHTTPInterface(object):
 
     def _get(self, params=None):
         absolute_url = self.get_full_path()
-        return requests.get(absolute_url, data=json.dumps(params))
+        return requests.get(absolute_url, params=params)
 
 
 class SolutionByTextAPI(SolutionByTextHTTPInterface):

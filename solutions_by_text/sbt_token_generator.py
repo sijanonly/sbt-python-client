@@ -7,7 +7,7 @@ This module handles security token generation.
 # @Author: sijanonly
 # @Date:   2018-03-19 10:57:26
 # @Last Modified by:   sijanonly
-# @Last Modified time: 2018-03-19 12:34:45
+# @Last Modified time: 2018-03-19 14:51:07
 
 import json
 
@@ -46,7 +46,6 @@ def create_security_token(api_key, stage):
     )
 
     response_data = json.loads(requests.get(url).text)
-    print('data is', response_data)
     if response_data['AuthenticateAPIKeyResult'].get('ErrorCode') == 1402:
         raise CustomException(
             'Error in generating security key.')
