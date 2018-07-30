@@ -2,8 +2,21 @@
 sbt-python-client: Wrapper for consuming `solutions by text REST API <https://www.solutionsbytext.com/api-support/api-documentation/>`_.
 =====================================================================
 
-sbt-python-client implements solutionsbytext REST API for python. Typical usage
-often looks like this : 
+sbt-python-client implements solutionsbytext REST APIs for python. 
+
+============
+
+* Python Python 3.5+
+
+Install
+============
+
+The quick way::
+
+    pip install scrapy
+
+
+Typical usage often looks like this : 
 
 1. Security Token
 

@@ -34,7 +34,7 @@ class PyTest(TestCommand):
 
 setup(
     name='sbt-python-client',
-    version='1.0.6',
+    version='1.0.7',
     packages=['solutions_by_text', 'tests'],
     url='https://github.com/sijanonly/sbt-python-client',
     license='MIT',
