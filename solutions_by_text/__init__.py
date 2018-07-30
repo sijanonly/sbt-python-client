@@ -6,4 +6,5 @@
 
 from .carrier import CarrierLookUp
 from .subscriber import SubscriberStatus
+from .message import Message, TemplateMessage
 from .sbt_token_generator import create_security_token

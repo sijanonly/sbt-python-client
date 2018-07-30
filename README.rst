@@ -50,3 +50,21 @@ often looks like this :
             phone=phones)
 
         response = subscriber_object.get()
+
+
+2. Message
+
+.. code-block:: python
+
+        from solutions_by_text import message
+
+        phone = "XXXXXXXXXX"
+        my_message = "This is my text message"
+        message_object = message.Message(
+            security_token=security_token,
+            org_code='ORG_CODE',
+            stage=STAGE,
+            phone=phone,
+            message=my_message)
+
+        response = message_object.send()

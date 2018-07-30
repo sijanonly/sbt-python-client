@@ -2,7 +2,7 @@
 # @Author: sijanonly
 # @Date:   2018-04-02 10:47:46
 # @Last Modified by:   sijanonly
-# @Last Modified time: 2018-04-02 12:08:49
+# @Last Modified time: 2018-07-27 13:12:18
 
 
 from .base import SolutionByTextAPI
@@ -30,3 +30,16 @@ class SubscriberStatus(SolutionByTextAPI):
             "phone": self.phone
         }
         return super().get(**arg)
+
+
+class SubscriberList(SolutionByTextAPI):
+    """
+    Subscriber list
+    """
+
+    service_end_point = 'ReportRSService.svc/Subscribers'
+
+    def __init__(self, security_token, org_code, stage):
+        super().__init__(
+            security_token, org_code, stage
+        )

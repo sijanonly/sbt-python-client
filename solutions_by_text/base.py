@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: sijanonly
 # @Date:   2018-03-15 12:59:25
-# @Last Modified time: 2018-04-02 11:08:46
+# @Last Modified time: 2018-07-27 14:26:14
 
 import json
 
@@ -27,10 +27,10 @@ class SolutionByTextHTTPInterface(object):
         """
         return "%s%s" % (self.base_url, self.service_end_point)
 
-    def _post(self, data):
+    def _post(self, params):
         headers = {'content-type': 'application/json'}
         absolute_url = self.get_full_path()
-        return requests.post(absolute_url, data=json.dumps(data), headers=headers)
+        return requests.post(absolute_url, data=json.dumps(params), headers=headers)
 
     def _get(self, params=None):
         absolute_url = self.get_full_path()
@@ -90,6 +90,20 @@ class SolutionByTextAPI(SolutionByTextHTTPInterface):
         }
         payload.update(**kwargs)
         return self._get(
+            params=payload
+        )
+
+    def post(self, **kwargs):
+        """
+        Calls BASE _post method
+        """
+        payload = {
+            "securityToken": self.security_token,
+            "orgCode": self.org_code,
+
+        }
+        payload.update(**kwargs)
+        return self._post(
             params=payload
         )
 
