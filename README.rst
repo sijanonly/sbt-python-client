@@ -13,7 +13,7 @@ Install
 
 The quick way::
 
-    pip install scrapy
+    pip install sbt-python-client
 
 
 Typical usage often looks like this : 
